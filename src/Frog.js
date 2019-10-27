@@ -39,7 +39,7 @@ class Frog extends Component {
 
         this.boxesElements.push(box);
       }
-      this.setState(Object.assign(this.state,{boxesElements: this.boxesElements}));
+      this.setState(Object.assign(this.state, {boxesElements: this.boxesElements}));
       // this.setState({boxesElements: this.boxesElements});
     }
     getNewBoxObject (index, itemSelected) {
@@ -59,8 +59,29 @@ class Frog extends Component {
     getBoxClass (item) {
       return item.selected ? CSS_STYLE_FROG : '';
     }
+    jumpFrogAdv (boxSelected) {
+        if (boxSelected.selected) {
+            const newBoxSelection = boxSelected.index < this.state.boxesElements.length ?
+                this.state.boxesElements[ boxSelected.index ] :
+                this.state.boxesElements[ 0 ];
+
+            this.boxesElements = this.state.boxesElements;
+            this.boxesElements[boxSelected.index-1].selected = false;
+            this.boxesElements[newBoxSelection.index-1].selected = true;
+
+            this.setState(Object.assign(this.state, {boxesElements: this.boxesElements}));
+            // this.boxesElements = [...this.boxesElements];
+
+            // this.requestUpdate();
+        }
+    }
     render () {
-        // onClick={(e) => this.jumpFrogAdv(item)}>
+        // onClick={(e) => this.jumpFrogAdv(item)}
+        // onClick={() => this.jumpFrogAdv(index)}
+        // onClick={() => this.jumpFrogAdv(this.getIndex(item))}
+        // onClick={() => this.jumpFrogAdv(item)}
+        // onClick={this.jumpFrogAdv}
+        // <td key="{item.index.toString()}" 
 
         return (
             <div>
@@ -70,8 +91,9 @@ class Frog extends Component {
                         <tr>
                             {this.state.boxesElements.map(item => {
                                 return (
-                                <td class={this.getBoxClass(item)}>
-                                {this.getIndex(item)}</td>
+                                <td key={this.getIndex(item)}
+                                    onClick={() => this.jumpFrogAdv(item)}
+                                    className={this.getBoxClass(item)}>{this.getIndex(item)}</td>
                                 )
                             })}
                         </tr>
