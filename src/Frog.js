@@ -75,18 +75,19 @@ class Frog extends Component {
     }
     jumpFrogAdv (boxSelected) {
         if (boxSelected.selected) {
-
             const newBoxSelection = boxSelected.index < this.state.boxesElements.length ?
                 this.state.boxesElements[ boxSelected.index ] :
                 this.state.boxesElements[ 0 ];
 
-            let boxesElements = JSON.parse(JSON.stringify(this.state.boxesElements));
-            this.boxesElementsPrev = JSON.parse(JSON.stringify(boxesElements));
+            let boxesElements = [...this.state.boxesElements];
+            this.boxesElementsPrev = [...boxesElements];
 
             boxesElements[boxSelected.index-1].selected = false;
             boxesElements[newBoxSelection.index-1].selected = true;
 
-            this.setState({boxesElements: boxesElements});
+            this.selected = `${newBoxSelection.index}`;
+            this.setState({boxesElements: boxesElements, selected: this.selected});
+            this.forceUpdate();
         }
     }
     changeInputBoxes (event) {
