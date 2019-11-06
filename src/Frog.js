@@ -24,9 +24,6 @@ class Frog extends Component {
         this.generateObjectBoxes();
         this.setState({boxesElements: JSON.parse(JSON.stringify(this.boxesElements))});
     }
-    // componentWillReceiveProps (nextProps) {
-    //     console.log('1 componentWillReceiveProps - nextProps : ', JSON.stringify(nextProps));
-    // }
     shouldComponentUpdate (nextProps, nextState) {
         if ((this.boxesElementsPrev === undefined) || this.isChangeToApply(nextProps, nextState)) {
             this.generateObjectBoxes(nextProps.boxes, nextProps.selected);
@@ -48,10 +45,6 @@ class Frog extends Component {
             (nextProps.config !== undefined && nextState.config !== undefined && nextProps.config !== nextState.config) ||
             (this.boxesElementsPrev !== undefined && nextState.boxesElements !== undefined && JSON.stringify(this.boxesElementsPrev) !== JSON.stringify(nextState.boxesElements));
     }
-    // componentWillUpdate (nextProps, nextState) {
-    //     console.log('3 componentWillUpdate - nextProps : ', JSON.stringify(nextProps));
-    //     console.log('3 componentWillUpdate - nextState : ', JSON.stringify(nextState));
-    // }
     generateObjectBoxes (nBoxes=null, selectedBox=null) {
         const numberBoxes = nBoxes !== null ? nBoxes : this.state.boxes;
         const boxSelected = selectedBox !== null ? selectedBox : this.state.selected;
@@ -64,21 +57,21 @@ class Frog extends Component {
         }
     }
     getNewBoxObject (index, itemSelected) {
-      const attrSelected = index === Number.parseInt(itemSelected);
+        const attrSelected = index === Number.parseInt(itemSelected);
 
-      return this.getBoxObject(index, attrSelected);
+        return this.getBoxObject(index, attrSelected);
     }
     getBoxObject (index, attrSelected) {
-      return {
-        selected: attrSelected, 
-        index
-      };
+        return {
+            selected: attrSelected, 
+            index
+        };
     }
     getIndex (item) {
-      return item.index;
+        return item.index;
     }
     getBoxClass (item) {
-      return item.selected ? CSS_STYLE_FROG : '';
+        return item.selected ? CSS_STYLE_FROG : '';
     }
     jumpFrogAdv (boxSelected) {
         if (boxSelected.selected) {
@@ -101,7 +94,7 @@ class Frog extends Component {
         this.changeBoxes(this.boxes.value, this.state.boxes);
     }
     changeBoxes (newNumberBoxes, oldNumberBoxes=DEFAULT_SELECTED) {
-      this.changeBoxesByObjects(newNumberBoxes, oldNumberBoxes);
+        this.changeBoxesByObjects(newNumberBoxes, oldNumberBoxes);
     }
     changeBoxesByObjects (newNumberBoxes, oldNumberBoxes) {
         if (!newNumberBoxes) this.oldNumberBoxesAux = oldNumberBoxes;
