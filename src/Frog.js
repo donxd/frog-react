@@ -27,9 +27,7 @@ class Frog extends Component {
     shouldComponentUpdate (nextProps, nextState) {
         if ((this.boxesElementsPrev === undefined) || this.isChangeToApply(nextProps, nextState)) {
             this.generateObjectBoxes(nextProps.boxes, nextProps.selected);
-            if (
-                (nextProps.boxes !== undefined && nextState.boxes !== undefined && nextProps.boxes !== nextState.boxes) || 
-                (nextProps.selected !== undefined && nextState.selected !== undefined && nextProps.selected !== nextState.selected)) {
+            if (this.isValidChange(nextProps, nextState)) {
                 nextState.boxesElements = JSON.parse(JSON.stringify(this.boxesElements));
             }
             this.setState(Object.assign(nextState, {...nextProps}));
@@ -38,6 +36,10 @@ class Frog extends Component {
         }
 
         return false;
+    }
+    isValidChange (nextProps, nextState) {
+        return (nextProps.boxes !== undefined && nextState.boxes !== undefined && nextProps.boxes !== nextState.boxes) || 
+                (nextProps.selected !== undefined && nextState.selected !== undefined && nextProps.selected !== nextState.selected);
     }
     isChangeToApply (nextProps, nextState) {
         return (nextProps.boxes !== undefined && nextState.boxes !== undefined && nextProps.boxes !== nextState.boxes) ||
@@ -136,10 +138,12 @@ class Frog extends Component {
 
         this.boxesElements = [...this.state.boxesElements];
 
+        let newSelected = false;
         if (positionFrog >= numberBoxes) {
             positionFrog = numberBoxes;
-            this.selected = positionFrog;
+            this.selected = `${positionFrog}`;
             this.boxesElements[positionFrog-1].selected = true;
+            newSelected = true;
         }
 
         for (let i = numberCreatedBoxes-1; i >= numberBoxes; i--) {
@@ -148,7 +152,11 @@ class Frog extends Component {
 
         this.boxesElementsPrev = JSON.parse(JSON.stringify(this.boxesElements));
 
-        this.setState({boxesElements: this.boxesElements, boxes: this.boxesElements.length, selected: `${this.selected}`});
+        const changeState = newSelected ?
+            {boxesElements: this.boxesElements, boxes: this.boxesElements.length, selected: `${this.selected}`} :
+            {boxesElements: this.boxesElements, boxes: this.boxesElements.length};
+
+        this.setState(changeState);
         this.forceUpdate();
     }
     changeInputSelection (event) {
