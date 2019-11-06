@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/frog-react/static/css/main.d0b17853.chunk.css",
+    "main.js": "/frog-react/static/js/main.3404201e.chunk.js",
+    "main.js.map": "/frog-react/static/js/main.3404201e.chunk.js.map",
+    "runtime-main.js": "/frog-react/static/js/runtime-main.9bab9afd.js",
+    "runtime-main.js.map": "/frog-react/static/js/runtime-main.9bab9afd.js.map",
+    "static/js/2.63cc6f62.chunk.js": "/frog-react/static/js/2.63cc6f62.chunk.js",
+    "static/js/2.63cc6f62.chunk.js.map": "/frog-react/static/js/2.63cc6f62.chunk.js.map",
+    "index.html": "/frog-react/index.html",
+    "precache-manifest.9c6e6ea5a37a9ace5e5c6560c9c25282.js": "/frog-react/precache-manifest.9c6e6ea5a37a9ace5e5c6560c9c25282.js",
+    "service-worker.js": "/frog-react/service-worker.js",
+    "static/css/main.d0b17853.chunk.css.map": "/frog-react/static/css/main.d0b17853.chunk.css.map",
+    "static/media/Frog.css": "/frog-react/static/media/frog.d0d6331b.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9bab9afd.js",
+    "static/js/2.63cc6f62.chunk.js",
+    "static/css/main.d0b17853.chunk.css",
+    "static/js/main.3404201e.chunk.js"
+  ]
+}
