@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/frog-react/static/css/main.d0b17853.chunk.css",
-    "main.js": "/frog-react/static/js/main.3404201e.chunk.js",
-    "main.js.map": "/frog-react/static/js/main.3404201e.chunk.js.map",
-    "runtime-main.js": "/frog-react/static/js/runtime-main.9bab9afd.js",
-    "runtime-main.js.map": "/frog-react/static/js/runtime-main.9bab9afd.js.map",
-    "static/js/2.63cc6f62.chunk.js": "/frog-react/static/js/2.63cc6f62.chunk.js",
-    "static/js/2.63cc6f62.chunk.js.map": "/frog-react/static/js/2.63cc6f62.chunk.js.map",
+    "main.js": "/frog-react/static/js/main.902a8d41.chunk.js",
+    "main.js.map": "/frog-react/static/js/main.902a8d41.chunk.js.map",
+    "runtime-main.js": "/frog-react/static/js/runtime-main.2609388e.js",
+    "runtime-main.js.map": "/frog-react/static/js/runtime-main.2609388e.js.map",
+    "static/js/2.f2c47e45.chunk.js": "/frog-react/static/js/2.f2c47e45.chunk.js",
+    "static/js/2.f2c47e45.chunk.js.map": "/frog-react/static/js/2.f2c47e45.chunk.js.map",
     "index.html": "/frog-react/index.html",
-    "precache-manifest.9c6e6ea5a37a9ace5e5c6560c9c25282.js": "/frog-react/precache-manifest.9c6e6ea5a37a9ace5e5c6560c9c25282.js",
+    "precache-manifest.76a972000917c186ec2c175ccdd953aa.js": "/frog-react/precache-manifest.76a972000917c186ec2c175ccdd953aa.js",
     "service-worker.js": "/frog-react/service-worker.js",
     "static/css/main.d0b17853.chunk.css.map": "/frog-react/static/css/main.d0b17853.chunk.css.map",
     "static/media/Frog.css": "/frog-react/static/media/frog.d0d6331b.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.9bab9afd.js",
-    "static/js/2.63cc6f62.chunk.js",
+    "static/js/runtime-main.2609388e.js",
+    "static/js/2.f2c47e45.chunk.js",
     "static/css/main.d0b17853.chunk.css",
-    "static/js/main.3404201e.chunk.js"
+    "static/js/main.902a8d41.chunk.js"
   ]
 }
